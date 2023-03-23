@@ -1,7 +1,11 @@
 package com.cashmanager.uangku.model;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;;
 
 @Entity
 @Table(name = "m_user")
@@ -51,4 +55,6 @@ public class User {
 	public String toString() {
 		return "User [id=" + Id + ", username=" + Username + ", password=" + Password + "]";
 	}
+
+    
 }
