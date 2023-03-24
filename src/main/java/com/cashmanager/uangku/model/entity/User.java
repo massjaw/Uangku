@@ -14,15 +14,16 @@ import jakarta.persistence.Column;;
 @Table(name = "m_user")
 
 public class User implements Serializable {
-    
+
     @Id
+    @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
-    @Column(name = "username")
+    @Column(name = "username", length = 15, unique = true)
     private String Username;
 
-    @Column(name = "password")
+    @Column(name = "password", length = 15)
     private String Password;
 
     public User() {

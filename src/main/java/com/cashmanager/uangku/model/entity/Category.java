@@ -5,13 +5,17 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "category")
 
-public class Category {
+public class Category implements Serializable {
     @Id
+    @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
 
