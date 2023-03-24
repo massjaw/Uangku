@@ -5,15 +5,18 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+
+import java.io.Serializable;
+
 import jakarta.persistence.Column;;
 
 @Entity
 @Table(name = "m_user")
 
-public class User {
+public class User implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
     @Column(name = "username")
@@ -26,35 +29,37 @@ public class User {
 
     }
 
-    public User(String username, String password) {
-        this.Password = password;
+    public User(long id, String username, String password) {
+        this.Id = id;
         this.Username = username;
+        this.Password = password;
     }
 
-    public long getId(){
+    public long getId() {
         return Id;
     }
 
-    public void setUsername(String username) {
-        this.Username = username;
+    public void setId(long id) {
+        Id = id;
     }
 
     public String getUsername() {
         return Username;
     }
 
-    public void setPassword(String password) {
-        this.Password = password;
+    public void setUsername(String username) {
+        Username = username;
     }
 
     public String getPassword() {
         return Password;
     }
 
-    @Override
-	public String toString() {
-		return "User [id=" + Id + ", username=" + Username + ", password=" + Password + "]";
-	}
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    
 
     
 }
