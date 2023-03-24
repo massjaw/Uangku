@@ -1,4 +1,4 @@
-package com.cashmanager.uangku.model;
+package com.cashmanager.uangku.model.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
