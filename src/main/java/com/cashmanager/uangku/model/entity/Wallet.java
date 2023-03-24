@@ -20,9 +20,6 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long Id;
 
-    @Column(name = "user_id")
-    private long UserId;
-
     @Column(name = "balance")
     private double Balance;
 
@@ -34,11 +31,10 @@ public class Wallet {
 
     }
 
-    public Wallet(long id, long userId, double balance, User user) {
-        this.Id = id;
-        this.UserId = userId;
-        this.Balance = balance;
-        this.User = user;
+    public Wallet(long id, double balance, com.cashmanager.uangku.model.entity.User user) {
+        Id = id;
+        Balance = balance;
+        User = user;
     }
 
     public long getId() {
@@ -49,19 +45,11 @@ public class Wallet {
         Id = id;
     }
 
-    public long getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(long userId) {
-        UserId = userId;
-    }
-
     public double getBalance() {
         return Balance;
     }
 
-    public void setBalance(float balance) {
+    public void setBalance(double balance) {
         Balance = balance;
     }
 
@@ -70,8 +58,7 @@ public class Wallet {
     }
 
     public void setUser(User user) {
-        this.User = user;
+        User = user;
     }
 
-    
 }
