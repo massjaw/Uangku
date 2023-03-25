@@ -11,7 +11,6 @@ import jakarta.validation.Valid;
 
 // import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,15 +51,4 @@ public class UserController {
         return ResponseEntity.ok(responseData);
     }
 
-    @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public String login(@Valid @RequestBody User user){
-        return user.toString();
-    }
-
-    @PutMapping(path = "/profile", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public String updateUseString(@RequestBody User user){
-        return user.toString();
-    }
 }

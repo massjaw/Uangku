@@ -19,7 +19,7 @@ import jakarta.persistence.JoinColumn;
 public class Cashflow {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private Long Id;
 
     @Column(name = "code")
     private String Code;
