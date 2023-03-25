@@ -48,7 +48,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
         responseData.setStatus(true);
-        responseData.setPayload(userService.createUser(user));
+        responseData.setPayload(userService.save(user));
         return ResponseEntity.ok(responseData);
     }
 

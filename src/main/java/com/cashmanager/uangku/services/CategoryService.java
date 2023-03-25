@@ -2,6 +2,8 @@ package com.cashmanager.uangku.services;
 
 import com.cashmanager.uangku.model.entity.Category;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,11 @@ public class CategoryService {
     }
 
     public Category findOne(Long id) {
-        return categoryRepository.findById(id).get();
+        Optional<Category> category = categoryRepository.findById(id);
+        if (!category.isPresent()){
+            return null;
+        }
+        return category.get();
     }
 
     public void removeOne(Long id) {

@@ -3,6 +3,8 @@ package com.cashmanager.uangku.model.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -14,6 +16,8 @@ import java.io.Serializable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "m_user")
 
@@ -40,46 +44,4 @@ public class User implements Serializable {
     public User(){
         
     }
-
-    public User(long id, String username,String password, Wallet wallet) {
-        Id = id;
-        Username = username;
-        Password = password;
-        this.wallet = wallet;
-    }
-
-    public long getId() {
-        return Id;
-    }
-
-    public void setId(long id) {
-        Id = id;
-    }
-
-    public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String username) {
-        Username = username;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public Wallet getWallet() {
-        return wallet;
-    }
-
-    public void setWallet(Wallet wallet) {
-        this.wallet = wallet;
-    }
-
-    
-    
 }

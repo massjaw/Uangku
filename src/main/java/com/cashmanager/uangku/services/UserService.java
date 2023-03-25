@@ -15,7 +15,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User createUser(User user){
+    public User save(User user){ //create and update
         return userRepository.save(user);
     }
 
