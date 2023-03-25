@@ -1,9 +1,5 @@
 package com.cashmanager.uangku.controller;
 
-import java.util.List;
-import java.util.Locale.Category;
-
-import javax.management.RuntimeErrorException;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cashmanager.uangku.dto.ResponseData;
+import com.cashmanager.uangku.model.entity.Category;
 import com.cashmanager.uangku.services.CategoryService;
 
 import jakarta.validation.Valid;

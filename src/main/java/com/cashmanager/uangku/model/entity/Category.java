@@ -12,7 +12,7 @@ import java.io.Serializable;
 import jakarta.persistence.Column;
 
 @Entity
-@Table(name = "category")
+@Table(name = "m_category")
 
 public class Category implements Serializable {
     @Id

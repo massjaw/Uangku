@@ -15,11 +15,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User creatUser(User user){
+    public User createUser(User user){
         return userRepository.save(user);
     }
-
-    
 
     public User findUser(long id){
         return userRepository.findById(id).get();
