@@ -3,12 +3,10 @@ package com.cashmanager.uangku.model.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.MapsId;
 
 
 @Entity
@@ -16,25 +14,25 @@ import jakarta.persistence.FetchType;
 
 public class Wallet {
     @Id
-    @Column(nullable = false, updatable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "user_id",nullable = false, updatable = false)
     private long Id;
 
     @Column(name = "balance")
     private double Balance;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
+    @MapsId
     @JoinColumn(name = "user_id")
-    private User User;
+    private User user;
 
     public Wallet() {
 
     }
 
-    public Wallet(long id, double balance, com.cashmanager.uangku.model.entity.User user) {
+    public Wallet(long id, double balance, User user) {
         Id = id;
         Balance = balance;
-        User = user;
+        this.user = user;
     }
 
     public long getId() {
@@ -54,11 +52,15 @@ public class Wallet {
     }
 
     public User getUser() {
-        return User;
+        return user;
     }
 
     public void setUser(User user) {
-        User = user;
+        this.user = user;
     }
+    
+    
+
+    
 
 }
