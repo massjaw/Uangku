@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cashmanager.uangku.dto.ResponseData;
 import com.cashmanager.uangku.model.entity.User;
-import com.cashmanager.uangku.model.entity.Wallet;
 import com.cashmanager.uangku.services.UserService;
 
 import jakarta.validation.Valid;
